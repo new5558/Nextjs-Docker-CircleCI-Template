@@ -8,6 +8,7 @@ class App extends Component {
       <div>
         {/* <Map/> */}
         {"test 3 : " + process.env.NODE_ENV}
+        {"?? 3 : " + process.env.GOOGLEMAP_API_KEY + "dsEs3d3HS3xP"}
       </div>
     );
   }

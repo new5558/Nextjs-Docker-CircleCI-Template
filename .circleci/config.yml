@@ -1,18 +1,9 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:10
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
       # environment:
       #     GOOGLEMAP_API_KEY = $googlemap_key
 
@@ -21,8 +12,8 @@ jobs:
     steps:
       - checkout
 
-      - setup_remote_docker:   # (2)
-          docker_layer_caching: true # (3)
+      - setup_remote_docker:
+          docker_layer_caching: true
 
       - restore_cache: # special step to restore the dependency cache
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
@@ -34,7 +25,7 @@ jobs:
           name: yarn-install
           command: yarn install
 
-      - save_cache: # special step to save the dependency cache
+      - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
@@ -48,11 +39,12 @@ jobs:
           name: Build and push Docker image
           command: | 
             yarn gencss
-            docker build -t new5558/$IMAGE_NAME:$CIRCLE_WORKFLOW_ID .
+            docker build -t $DOCKER_LOGIN/$IMAGE_NAME:$CIRCLE_WORKFLOW_ID .
             docker login -u $DOCKER_LOGIN -p $DOCKER_PWD
-            docker push new5558/$IMAGE_NAME:$CIRCLE_WORKFLOW_ID
+            docker push $DOCKER_LOGIN/$IMAGE_NAME:$CIRCLE_WORKFLOW_ID
 
       - run:
           name: Deploy app to Digital Ocean Server via Docker
           command: |
-            ssh -o StrictHostKeyChecking=no root@norapat.com "docker rm $IMAGE_NAME -f && docker run -d -p 3000:3000 --name $IMAGE_NAME new5558/$IMAGE_NAME:$CIRCLE_WORKFLOW_ID"
+            ssh -o StrictHostKeyChecking=no $SSH_PATH "docker rm $IMAGE_NAME -f && docker run -d -p 3000:3000 --name $IMAGE_NAME $DOCKER_LOGIN/$IMAGE_NAME:$CIRCLE_WORKFLOW_ID"
+            # $SSH_PATH = root@norapat.com
