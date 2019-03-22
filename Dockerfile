@@ -10,4 +10,4 @@ COPY . .
 RUN yarn build
 
 # Running the app
-CMD ["yarn", "start"]
+CMD ["GOOGLEMAP_API_KEY=$GOOGLEMAP_API_KEY", "yarn", "start"]

@@ -4,9 +4,6 @@ jobs:
     docker:
       - image: circleci/node:10
 
-      # environment:
-      #     GOOGLEMAP_API_KEY = $googlemap_key
-
     working_directory: ~/repo
 
     steps:
