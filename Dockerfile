@@ -9,7 +9,9 @@ COPY . .
 # Building app
 RUN yarn build
 ARG GOOGLEMAP_API_KEY
-RUN echo GOOGLEMAP_API_KEY=$GOOGLEMAP_API_KEY> .env
+ENV TESTING 1231233253252355235
+RUN echo GOOGLEMAP_API_KEY=$GOOGLEMAP_API_KEY > .env
+RUN echo testing $TESTING
 
 # Running the app
 CMD ["yarn", "start"]
