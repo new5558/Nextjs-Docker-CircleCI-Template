@@ -11,4 +11,4 @@ RUN yarn build
 
 # Running the app
 ARG GOOGLEMAP_API_KEY
-CMD ["GOOGLEMAP_API_KEY=$GOOGLEMAP_API_KEY", "yarn", "start"]
+CMD ["GOOGLEMAP_API_KEY=", "$GOOGLEMAP_API_KEY", "yarn", "start"]
