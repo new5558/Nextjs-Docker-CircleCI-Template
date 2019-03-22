@@ -14,4 +14,5 @@ COPY . .
 RUN yarn build
 
 # Running the app
-CMD [ "yarn", "start" ]
+# CMD [ "yarn", "start" ]
+CMD ["NODE_ENV=production-circleci", "node", "server.js"]
