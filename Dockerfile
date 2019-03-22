@@ -15,4 +15,4 @@ RUN yarn build
 
 # Running the app
 # CMD [ "yarn", "start" ]
-CMD ["NODE_ENV=production", "node", "server.js"]
+CMD ["yarn", "start"]
