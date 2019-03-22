@@ -1,1 +1,1 @@
-# JUST A PROTOTYPE# Nextjs-Docker-CircleCI-Template
+# Nextjs-Docker-CircleCI-Template
