@@ -2,8 +2,8 @@ const express = require('express')
 const next = require('next')
 
 const env = process.env.NODE_ENV
-const dev = env !== 'production-circleci'
-const app = next({ dev })
+const dev = env !== 'production'
+const app = next({ dev: process.env.NODE_ENV !== 'production' })
 const handle = app.getRequestHandler();
 
 (async () => {
