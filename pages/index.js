@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Map from '../components/home/Map.js'
+import SomeComponent from '../components/home/SomeComponent'
 import '../util/tw.css';
 
-const key = process.env.GOOGLEMAP_API_KEY
+const key = process.env.API_KEY
 
 class App extends Component {
   static getInitialProps() {
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Map apiKey={this.props.env} />
+        <SomeComponent apiKey={this.props.env} />
       </div>
     );
   }
