@@ -15,8 +15,6 @@ class App extends Component {
     return (
       <div>
         <Map apiKey={this.props.env} />
-        {/* {"test 3 : " + process.env.NODE_ENV} */}
-        {/* {"?? 3 : " + process.env.GOOGLEMAP_API_KEY + "dsEs3d3HS3xP" + this.props.env} */}
       </div>
     );
   }
