@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Map from '../components/home/Map.js'
+import Map from '../components/home/Map.js'
 import '../util/tw.css';
 
 class App extends Component {
