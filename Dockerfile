@@ -8,11 +8,6 @@ COPY . .
 
 # Building app
 RUN yarn build
-# ARG GOOGLEMAP_API_KEY
-#ENV TESTING $GOOGLEMAP_API_KEY
-# RUN echo GOOGLEMAP_API_KEY=$GOOGLEMAP_API_KEY > .env
-# RUN echo NODE_ENV=production >> .env
-#RUN cat .env
 
 # Running the app
 CMD ["yarn", "start"]
