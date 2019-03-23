@@ -18,7 +18,7 @@
     "start:tw": "postcss ./util/tw.css -o ./util/tailwind.css -w",
     "dev": "concurrently --kill-others \"yarn start:tw\" \"node server.js\"",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "node server.js",
     "test": "jest",
     "eject": "react-scripts eject"
   },
