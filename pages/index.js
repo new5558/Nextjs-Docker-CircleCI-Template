@@ -12,7 +12,7 @@ class App extends Component {
     console.log('key :' + key)
     return (
       <div>
-        {/* <Map/> */}
+        <Map/>
         {"test 3 : " + process.env.NODE_ENV}
         {"?? 3 : " + process.env.GOOGLEMAP_API_KEY + "dsEs3d3HS3xP" + key}
       </div>
