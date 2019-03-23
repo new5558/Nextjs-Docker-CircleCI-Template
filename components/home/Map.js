@@ -13,7 +13,6 @@ export class MapContainer extends Component {
   };
 
   render() {
-    console.log("key:" + this.props.apiKey + " env:" + process.env.NODE_ENV);
     return (
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
