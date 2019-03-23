@@ -4,6 +4,9 @@ import '../util/tw.css';
 
 class App extends Component {
   render() {
+    for(const field in process.env) {
+      console.log(field + " : " + process.env[field]);
+    } 
     return (
       <div>
         {/* <Map/> */}
