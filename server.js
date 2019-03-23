@@ -4,6 +4,7 @@ require('dotenv').config();
 
 const env = process.env.NODE_ENV
 const dev = env !== 'production'
+console.log('dev :' + process.env.GOOGLEMAP_API_KEY + ":" + dev)
 const app = next({ dev: process.env.NODE_ENV !== 'production' })
 const handle = app.getRequestHandler();
 (async () => {
