@@ -8,7 +8,7 @@ class App extends Component {
       console.log(field + " : " + process.env[field]);
     } 
     console.log('special :'+ process.env.GOOGLEMAP_API_KEY )
-    const key = GOOGLEMAP_API_KEY;
+    const key = process.env.GOOGLEMAP_API_KEY;
     console.log('key :' + key)
     return (
       <div>
