@@ -7,6 +7,7 @@ const mapStyles = {
 }
 
 export class MapContainer extends Component {
+    console.log(process.env.GOOGLEMAP_API_KEY)
     render() {
         return (
             <Map
